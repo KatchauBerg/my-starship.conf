@@ -1,0 +1,19 @@
+# Minimal Hacker ⚫👨‍💻
+format = """$directory$git_branch$character """
+
+add_newline = false
+
+[directory]
+style = "bold dimmed white"
+format = "[$path]($style)"
+
+[git_branch]
+symbol = ""
+style = "dimmed green"
+format = " [$symbol $branch]($style)"
+
+[character]
+success_symbol = "[#](bold white)"
+error_symbol = "[!](bold red)"
+vicmd_symbol = "[<](bold yellow)"
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh 
+
+STARSHIP_CONFIG=~/.config/starship/starship.toml
+STARSHIP_DIR="$HOME/.config/starship"
+STARSHIP_THEMES_DIR="$STARSHIP_DIR/themes"
+STARSHIP_CURRENT_THEME="$STARSHIP_DIR/starship.toml"
+
+# STARSHIP_DIR="$HOME/.config/starship"
+# THEMES_DIR="$STARSHIP_DIR/themes"
+# CURRENT_THEME="$STARSHIP_DIR/starship.toml"  # Link direto para o arquivo principal
+
+selected_theme=$(fd -e toml --base-directory "$STARSHIP_THEMES_DIR" | fzf --prompt="Selecione o tema > ")
+
+if [ -n "$selected_theme" ]; then
+  ln -sf "$STARSHIP_THEMES_DIR/$selected_theme" "$STARSHIP_CURRENT_THEME"
+  echo "✅ Tema alterado para: $selected_theme"
+  exec $SHELL
+fi

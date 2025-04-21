@@ -1,0 +1,70 @@
+# Tema hackerzão 🔥
+format = """
+[┏━━━](bold green)$username[@](bold green)$hostname [━━━┓](green)
+[┃](bold green) $directory$git_branch$git_status$nodejs$python$rust$cmd_duration
+[┗━━━>](bold green) $character
+"""
+
+add_newline = true
+
+# Usuário e Host
+[username]
+style_user = "bold bright-green"
+style_root = "bold red"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold yellow)"
+
+# Diretório atual
+[directory]
+style = "bold bright-black"
+read_only = " 🔒"
+format = "[$path]($style)[$read_only]($style)"
+
+# Git
+[git_branch]
+symbol = " "
+style = "bold bright-purple"
+format = " [$symbol$branch]($style)"
+
+[git_status]
+style = "bold red"
+format = " [$all_status$ahead_behind]($style)"
+
+# Linguagens
+[nodejs]
+symbol = " "
+style = "bold bright-green"
+format = " [$symbol$version]($style)"
+
+[python]
+symbol = "🐍 "
+style = "bold blue"
+format = " [$symbol$version]($style)"
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
+format = " [$symbol$version]($style)"
+
+# Tempo de execução
+[cmd_duration]
+min_time = 500
+format = " ⏱ [$duration](bold yellow)"
+
+# Prompt final
+[character]
+success_symbol = "[➤](bold green)"
+error_symbol = "[✘](bold red)"
+vicmd_symbol = "[V](bold blue)"
+
+# Desabilita extras desnecessários
+[shell]
+disabled = true
+
+[battery]
+disabled = true
+
